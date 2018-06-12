@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/style.css}"></link>
+  </head>
+	<body onload='document.f.username.focus();'>
+	
+		<!-- <h2>Create Username and password</h2> -->
+		<div id="newUserForm">
+			<h3>Create Username and password</h3>
+			<!-- <div class="error" th:if="${param.error}">
+			  Incorrect username or password. Try again.
+			</div> -->
+			
+			<form method="POST">
+				<table>
+					<tr>
+						<td>User:</td>
+						<td><input type='text' name='username' value='' /></td>
+					</tr>
+					<tr>
+						<td>Password:</td>
+						<td><input type='password' name='password' /></td>
+					</tr>
+					<tr>
+						<td colspan='2'><!-- <input name="submit" type="submit" /> -->
+						<button type="submit">Create User</button></td>
+					</tr>
+				</table>
+			</form>
+			
+			<hr />
+			
+			
+			 <form method="POST" th:action="@{/logout}">
+      <input type="submit" value="Logout" />
+    </form>
+		
+			
+			
+			
+			
+		</div>
+	</body>
+</html>

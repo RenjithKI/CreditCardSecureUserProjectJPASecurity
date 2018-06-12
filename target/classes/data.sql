@@ -1,0 +1,2 @@
+insert into Customer (username, password) values ('user', '$2a$04$MpFxNuUZtJihTfsI/yn32u07sfAqsS4RHaw.nvcz1ybL.3k7dKllG');
+insert into Customer (username, password) values ('admin', '$2a$04$cdznHMV0VodcBCKOOrj5tuEQeBXEfF4XnIS4lg5KicgInwJJx2eg6');

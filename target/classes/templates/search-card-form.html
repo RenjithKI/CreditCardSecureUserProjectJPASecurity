@@ -1,0 +1,41 @@
+<html>
+<body>
+	<form method="POST">
+		<label for="number">NUMBER:</label> <input type="text" name="number"
+			size="50"></input><br />
+			
+			<br /><br />
+		<button type="submit">Search Credit Cards</button>
+	</form>
+	
+	
+	<hr />
+	
+	<div th:unless="${#lists.isEmpty(cards)}">
+	<h2>Credit cards that match the search Criteria</h2>
+		<dl th:each="card : ${cards}">
+			<dt class="bookHeadline">
+
+				Name of Credit Card holder: <span th:text="${card.name}">Name</span>, Credit Card Number: <span
+					th:text="${card.number}">Number</span>, Expiry Date (yy/mm): <span
+					th:text="${card.expiryYear} + '/' + ${card.expiryMonth}">Expiry
+					Date</span>.
+			</dt>
+
+		</dl>
+	</div>
+	
+	<hr />
+	
+	<h2>API Links</h2>
+	<p>
+		<a href="/">Post Credit card details</a>
+	</p>
+	<p>
+		<a href="/search-credit-card">Search Cards</a>
+	</p>
+	<p>
+		<a href="/credit-cards-list">all cards page</a>
+	</p>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <form action="#" th:action="@{/}" th:object="${creditCard}" method="post">
+            <table>
+            
+            	 <tr>
+                    <td>Credit Card Number:</td>
+                    <td><input type="text" th:field="*{number}"  size="16"/></td>
+                    <td th:if="${#fields.hasErrors('number')}" th:errors="*{number}">Number Error</td>
+                </tr>
+                <tr>
+                    <td>Name of Credit Card holder:</td>
+                    <td><input type="text" th:field="*{name}"  size="70"/></td>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                </tr>
+                
+                  <tr>
+                    <td>Expiry Date (yy/mm):</td>
+                    <td><input type="text" th:field="*{expiryYear}" size="2" /> / <input type="text" th:field="*{expiryMonth}" size="2"/> </td>
+                    
+                    <td th:if="${#fields.hasErrors('expiryMonth')}" th:errors="*{expiryMonth}">Expiry Month Error</td>                    
+                    <td th:if="${#fields.hasErrors('expiryYear')}" th:errors="*{expiryYear}">Expiry year Error</td>
+                </tr>
+               
+                <tr>
+                    <td><button type="submit">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+        
+        
+        	<hr />
+        
+        <h2>API Links</h2>		
+		<p><a href="/search-credit-card">Search Cards</a></p>
+		<p><a href="/credit-cards-list">all cards page</a></p>
+    </body>
+</html>

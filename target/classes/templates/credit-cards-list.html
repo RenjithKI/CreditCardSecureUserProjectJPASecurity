@@ -1,0 +1,38 @@
+<html>
+<head>
+<title>Credit card List</title>
+<link rel="stylesheet" th:href="@{/style.css}"></link>
+</head>
+
+<body>
+	<h2>Your Credit card List</h2>
+	<div th:unless="${#lists.isEmpty(cards)}">
+		<dl th:each="card : ${cards}">
+			<dt class="bookHeadline">
+
+				Name of Credit Card holder: <span th:text="${card.name}">Name</span>, Credit Card Number: <span
+					th:text="${card.number}">Number</span>, Expiry Date (yy/mm): <span
+					th:text="${card.expiryYear} + '/' + ${card.expiryMonth}">Expiry
+					Date</span>.
+			</dt>
+
+		</dl>
+	</div>
+	<div th:if="${#lists.isEmpty(cards)}">
+		<p>You have no cards in your card list</p>
+	</div>
+
+
+	<hr />
+	
+	<h2>API Links</h2>
+	<p>
+		<a href="/search-credit-card">Search Cards</a>
+	</p>
+	<p>
+		<a href="/credit-cards-list">all cards page</a>
+	</p>
+
+
+</body>
+</html>
